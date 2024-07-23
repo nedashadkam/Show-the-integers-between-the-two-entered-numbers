@@ -1,0 +1,66 @@
+<!-- یک برنامه جاوا اسکریپت بنویسید تا با استفاده از بازگشت اعداد صحیح در محدوده (x,y) بدست آید.   -->
+
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" type="text/css" href="ex-57.css">
+
+</head>
+
+<body>
+
+    <div>
+
+        <p>
+            <label for="num1">Enter an integer</label>
+            <input id="num1">
+        </p>
+
+        <p>
+            <label for="num2">Enter an integer greater than the previous number</label>
+            <input id="num2">
+        </p>
+
+        <button onclick="cal()">Show the integers between the two entered numbers</button>
+
+        <p id="demo"></p>
+
+    </div>
+
+
+    <script>
+
+        function cal() {
+
+            document.getElementById("demo").innerHTML = '';
+            sum = [];
+
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;
+
+            document.getElementById("demo").innerHTML = output(+num1, +num2);
+
+        }
+
+        let sum = [];
+        function output(min, max) {
+            
+            if (min < max - 1) {
+                min = min + 1;
+                sum.push(min) ;
+                
+                output(min, max)
+            }
+
+            return sum;
+        }
+
+    </script>
+
+</body>
+
+</html>
